@@ -99,7 +99,7 @@ void Session :: simulate(){
     unsigned int currsize = (unsigned int) agents.size();
     bool finish=false;
     while (!finish) {
-        for (unsigned int i = 0; i <currsize; i++) {//pay attention that the new vertex that infected is spread in the next iteration.. output?
+        for (unsigned int i = 0; i <currsize; i++) {
             agents[i]->act(*this);
         }
         cycle++;
@@ -122,7 +122,7 @@ void Session :: simulate(){
 
 }
 
-void Session :: addAgent(const Agent& agent) {//we need to clone the agent
+void Session :: addAgent(const Agent& agent) {
     Agent* newAgent= agent.clone();
     agents.push_back(newAgent);
 }
